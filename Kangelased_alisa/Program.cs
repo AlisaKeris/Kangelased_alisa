@@ -34,9 +34,13 @@ namespace Kangelased_alisa
             Console.WriteLine($"Sajast:{sajast}");
             Console.WriteLine($"Viiekümnest:{poolsajast}");*/
             LaeKangelased("kangelased.txt");
+            Console.WriteLine("Mitu inimest on ohus?");
+            var ohus = int.Parse(Console.ReadLine());
             foreach (var kangelane in kangelased)
             {
                 Console.WriteLine(kangelane);
+                var päästetuid = kangelane.Päästa(ohus);
+                Console.WriteLine($"{kangelane.GetNimi()} suutis päästa {ohus}/{päästetuid}.");
             }
         }
 
